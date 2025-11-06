@@ -52,7 +52,7 @@ class ComanageApiController extends Controller
           }
         }
 
-    // request ORCID summary
+    // request Access Tokens 
         $getToken = Http::withHeaders($commonHeaders)
             ->get('https://unt.identity.iu.edu/registry/orcid_source/orcid_tokens/token.json', [
                 'orcid' => $userData,
