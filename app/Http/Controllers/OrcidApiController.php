@@ -59,7 +59,7 @@ class OrcidApiController extends Controller
                     'status'  => $response->status(),
                     'message' => $response->body()
                 ], JSON_PRETTY_PRINT)
-            ], $response->status());
+            ]);
         }
 
     $json = $response->json();
