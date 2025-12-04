@@ -37,13 +37,22 @@
                                     </li>
 				</ul>
 
-                               <div class="rvt-flex rvt-items-center rvt-m-left-md rvt-p-bottom-md rvt-p-bottom-none-lg-up">
-                                    <div class="rvt-ts-14">
-                                        <span><strong>Logged in as </strong></span>
-                                    </div>
-                                    <div class="rvt-ts-14 rvt-m-left-xs rvt-p-right-xs rvt-m-right-xs rvt-border-right">{{ cas()->user() }}</div>
-					<a href="{{ route('logout') }}">Logout</a>				   
-				</div>
+                        <div class="rvt-flex rvt-items-center rvt-m-left-md rvt-p-bottom-md rvt-p-bottom-none-lg-up">
+                        @if (cas()->isAuthenticated())
+                            <div class="rvt-ts-14">
+                                <strong>Logged in as</strong>
+                            </div>
+                            <div class="rvt-ts-14 rvt-m-left-xs rvt-p-right-xs rvt-m-right-xs rvt-border-right">
+                                {{ cas()->user() }}
+                            </div>
+                                <a href="{{ route('logout') }}">Logout</a>
+                        @else
+                            <a href="{{ url('/login') }}">
+                                <button type="button" class="rvt-button">IU Login</button>
+                            </a>
+                        @endif
+                        </div> 
+                        
                             </nav>
                         </div>
                     </div>
