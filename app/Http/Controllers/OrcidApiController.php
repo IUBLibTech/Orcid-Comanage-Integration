@@ -13,7 +13,9 @@ class OrcidApiController extends Controller
     $username = app('cas.username');
 
         // Find the matching ORCID record
-        $record = OrcidAccess::whereRaw('LOWER(name) = ?', [strtolower($username)])->first();
+        $record = OrcidAccess::where('name', $username)
+    		->latest()
+    		->first();
 
         if (!$record) {
             return view('orcid', [
@@ -41,38 +43,20 @@ class OrcidApiController extends Controller
             ], 401);
         }
 
-        // API request 
-        $response = Http::withToken($accessToken)
-            ->accept('application/json')
-            ->get("https://api.sandbox.orcid.org/v3.0/{$orcidId}/summary");
+        // API requests
+     	$responseSummary = Http::withToken($accessToken)
+    	->accept('application/json')
+    	->get("https://api.sandbox.orcid.org/v3.0/{$orcidId}/summary");
 
-        if ($response->failed()) {
-            return view('orcid', [
-                'status'   => 'error',
-                'error'    => 'Failed to fetch data from ORCID API.',
-                'code'     => $response->status(),
-                'message'  => $response->body(),
-                'orcid'    => $orcidId,
-                'data'     => null,
-                'raw_json' => json_encode([
-                    'error'   => 'Failed to fetch data from ORCID API.',
-                    'status'  => $response->status(),
-                    'message' => $response->body()
-                ], JSON_PRETTY_PRINT)
-            ]);
-        }
+	$responseWorks = Http::withToken($accessToken)
+    	->accept('application/json')
+    	->get("https://api.sandbox.orcid.org/v3.0/{$orcidId}/works");
 
-    $json = $response->json();
-
-    return view('orcid', [
-        'status'   => 'success',
-        'orcid'    => $orcidId,
-        'data'     => $json,
-        'error'    => null,
-        'code'     => null,
-        'message'  => null,
-        'raw_json' => json_encode($json, JSON_PRETTY_PRINT),
-    ]);
-    
+	return view('orcid', [
+    		'orcid'   => $orcidId,
+    		'summary' => $responseSummary->json(),   // decoded array
+    		'works'   => $responseWorks->json(),     // decoded array
+	]);
+	
     }
 }
