@@ -2,15 +2,18 @@
 
 @section('title', 'COmanage / ORCID')
 @section('page-heading')
+<div class="rvt-container-lg">
     <h1 class="rvt-m-top-md rvt-m-bottom-md">COmanage — ORCID Integration</h1>
-@endsection
+</div>
+ @endsection
 
 @push('styles')
     {{-- page-specific CSS if needed --}}
 @endpush
 
 @section('content')
-                <div class="rvt-flow rvt-prose">
+<div class="rvt-container-lg">	       
+	<div class="rvt-flow rvt-prose">
 		  
 	<p>Comanage Registry is an identity management system that facilitates enrollment and lifecycle management within collaborative organizations. IU's Identity Management Services is implementing this system as an integration with IU Login.</p> 
             
@@ -27,9 +30,8 @@
 <p>Click to authorize IU as a trusted party read & write access to your ORCID record </p> 
 <div>  
  <a href="https://unt.identity.iu.edu/registry/co_petitions/start/coef:6">
-<button type="button" class="rvt-button">
+<button type="button" class="rvt-cta rvt-cta--button">
 <span>Begin</span>
-<svg class="rvt-icon-link-external" fill="currentColor" width="13" height="13" viewBox="0 0 16 16"><path d="M15 1H9v2h2.586l-3 3L10 7.414l3-3V7h2V1Z"></path><path d="M7 3H1v12h12V9h-2v4H3V5h4V3Z"></path></svg>
 </button></a></div>
 <div>
 <p class-"rvt-m-top-sm"> <strong>Please be patient</strong>:</p>
@@ -46,4 +48,5 @@
 <p>Note: The data posted here is derived from a development instance of the Comanage Registry and the ORCID sandbox. It's included for demonstration purposes only. This dev site is restricted to IU Login users.</p> 
         </div>
     </div>
+</div>
 @endsection
