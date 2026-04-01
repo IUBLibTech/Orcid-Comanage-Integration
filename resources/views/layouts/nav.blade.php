@@ -1,9 +1,10 @@
-    <header class="rvt-header-wrapper">
+<body>   
+ <header class="rvt-header-wrapper">
 
         <a class="rvt-header-wrapper__skip-link" href="#main-content">Skip to main content</a>
 
         <div class="rvt-header-global">
-            <div class="rvt-p-lr-md">
+            <div class="rvt-container-lg">
                 <div class="rvt-header-global__inner">
                     <div class="rvt-header-global__logo-slot">
                         <a class="rvt-lockup" href="https://orcid-dev.dlib.indiana.edu">
@@ -51,8 +52,8 @@
                                 <button type="button" class="rvt-button">IU Login</button>
                             </a>
                         @endif
-                        </div> 
-                        
+                        </div>
+
                             </nav>
                         </div>
                     </div>

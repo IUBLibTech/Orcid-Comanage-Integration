@@ -2,7 +2,9 @@
 
 @section('title', 'ORCID Profile')
 @section('page-heading')
+<div class="rvt-container-lg">
     <h1 class="rvt-m-top-md rvt-m-bottom-md">ORCID Profile</h1>
+</div>
 @endsection
 
 @push('styles')
@@ -10,8 +12,9 @@
 @endpush
 
 @section('content')
+<div class="rvt-container-lg">
 {{-- SUMMARY --}}
-<h2>ORCID Summary</h2>
+<h2>Summary</h2>
 
 <p><strong>Name:</strong> {{ $summary['credit-name'] ?? '' }}</p>
 
@@ -90,5 +93,6 @@
 @endforeach
 @else
     <p>No publications found.</p>
-@endif
+    @endif
+ </div>
 @endsection

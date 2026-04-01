@@ -1,4 +1,5 @@
     <footer class="rvt-footer-base rvt-footer-base--light">
+        <div class="rvt-container-lg">
         <div class="rvt-footer-base__inner [ rvt-p-lr-md ]">
             <div class="rvt-footer-base__logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -19,15 +20,17 @@
                     <a class="rvt-footer-base__link" href=https://libraries.indiana.edu/privacy">Privacy Notice</a>
                 </li>
                 <li class="rvt-footer-base__item">
-                    <a class="rvt-footer-base__link" href="https://www.iu.edu/copyright/index.html">Copyright</a> © 2025 The Trustees of <a class="rvt-footer-base__link" href="https://www.iu.edu">Indiana University</a>
+                    <a class="rvt-footer-base__link" href="https://www.iu.edu/copyright/index.html">Copyright</a> © 2026 The Trustees of <a class="rvt-footer-base__link" href="https://www.iu.edu">Indiana University</a>
                 </li>
             </ul>
         </div>
+     </div>
     </footer>
     @stack('scripts')
-	<script src="https://unpkg.com/rivet-core@2.8.1/js/rivet.min.js"></script>
-    	<script>
-        Rivet.init();
-    	</script>
+<script src="https://unpkg.com/rivet-core@2.9.1/js/rivet.min.js"></script>
+<script>Rivet.init();</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </body>
 </html>
+

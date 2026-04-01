@@ -13,15 +13,53 @@
         <meta property="og:image:width" content="768" />
         <meta property="og:image:height" content="512" />
         <link href="https://assets.iu.edu/favicon.ico" rel="icon" type="image/x-icon" />
-        <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.8.1/css/rivet.min.css" type='text/css' media='all' >
+        <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.9.1/css/rivet.min.css">
 	<style>
-	.rvt-layout__sidebar {
-    	  border:none;
-	}
 	body {
-	  min-height: 80vh;
+    	  min-height: 100vh;
+          display: flex;
+          flex-direction: column;
 	}
-      	</style>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+
+	main {
+          flex: 1;
+	}
+	@supports (aspect-ratio: 1/1) {
+    	  .rvt-hero__media img {
+            aspect-ratio: 1 / 1 !important;
+     		}
+  	}	
+      .rvt-prose-offset {
+	  color:#fff;
+	  font-size: 1.125rem;
+          line-height: 1.65;
+	}
+      .rvt-prose-offset a {
+       	  color:#8ed7f1;
+	}
+       .rvt-prose-offset a:hover {
+          color: #3ab7e4;
+	}
+       .row-flex {
+    	  display: flex;
+          flex-wrap: wrap;
+          margin-right: -0.75rem;
+          margin-left: -0.75rem;
+          padding-left: 0;
+          align-content: center;
+          justify-content: center;
+       }
+	h1 {
+	  font-size: 1.7rem;
+          font-weight: 700;
+       }
+	h2 {
+           font-size: 1.5rem;
+	   font-weight: 700;
+       }
+	h4 {
+          font-size: 1.5rem;
+        }
+    </style>
     </head>
-    <body class="rvt-layout">
+
